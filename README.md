@@ -22,3 +22,5 @@ Realizado o clone deste projeto, utilizaremos o site https://cors-anywhere.herok
 Para rodar o projeto basta acessar o clone do projeto onde esta o arquivo docker-compose.yml e executar via terminal o comando "docker-compose up".
 
 Agora apenas aguarde ele realizar o build da imagem e rodar o container, finalizando acesse http://localhost:4200/.
+
+This is a challenge by Coodesh
