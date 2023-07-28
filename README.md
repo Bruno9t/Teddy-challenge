@@ -1,27 +1,24 @@
-# TeddyUi
+# Teddy challenge by Coodesh
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+## Objetivo do desafio
+Desafio proposto pela empresa Teddy Open Finance para fins de seleção.
 
-## Development server
+O Objetivo seria desenvolver uma aplicação web que gerasse emails temporários para o usuário usando a API do Dropmail https://dropmail.me/api/ e o framework Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias principais usadas
+- Angular(Angular Material)
+- Node.js(Moment.js)
+- Typescript
+- Docker
+- docker-compose
+## Como usar o projeto
 
-## Code scaffolding
+Como estamos utilizando Docker compose será necessário ter o Docker instalado, caso não tenha segue a documentação https://www.docker.com/get-started/.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após instalado o Docker realize o clone deste projeto via ssh ou https.
 
-## Build
+Realizado o clone deste projeto, utilizaremos o site https://cors-anywhere.herokuapp.com/ para não termos problemas com o Cors, acessando o site clique para poder usar a API.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para rodar o projeto basta acessar o clone do projeto onde esta o arquivo docker-compose.yml e executar via terminal o comando "docker-compose up".
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Agora apenas aguarde ele realizar o build da imagem e rodar o container, finalizando acesse http://localhost:4200/.
