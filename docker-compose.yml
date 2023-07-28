@@ -1,0 +1,12 @@
+version: '1'
+services:
+
+  teddy-ui:
+    build: ./teddy-ui
+    container_name: teddy-ui
+    ports:
+      - 4200:4200
+
+
+volumes:
+  teddy-data:

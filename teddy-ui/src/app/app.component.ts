@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   linkedin = 'https://www.linkedin.com/in/bruno-medeiros-201b39180/'
   gitHub = 'https://github.com/Bruno9t'
 
-  endpoint = "https://dropmail.me/api/graphql/9sdf0nx96320n047"
+  endpoint = "https://dropmail.me/api/graphql/9sdf0nx96320n047ad323"
   proxyurl = "https://cors-anywhere.herokuapp.com/";
 
   emails = [];
@@ -52,16 +52,18 @@ export class AppComponent implements OnInit {
   ];
 
   emailSelected = this.emailsTest[0];
+  emailSelectedIndex: number | null = null;
+  lastSelected:any = {};
 
   ngOnInit(): void {
-    
+
   }
 
   public async searchForEmails(event:any){
     console.log(event)
     const headers = {
       "content-type": "application/json",
-      "Authorization": "9sdf0nx96320n047"
+      "Authorization": "9sdf0nx96320n047ad323"
     }
 
     const graphqlQuery = {
@@ -82,8 +84,15 @@ export class AppComponent implements OnInit {
 
   }
 
-  public selectedEmail(index: number){
+  public selectedEmail(event: any,index: number){
+    console.log(index,this.emailSelectedIndex)
+    if(this.emailSelectedIndex !== index && this.emailSelectedIndex !== null){
+      this.lastSelected.className = this.lastSelected.className.split(' selected')[0]
+    }
+    this.lastSelected = event.target;
     this.emailSelected = this.emailsTest[index];
+    this.emailSelectedIndex = index
+    event.target.className += " selected"
   }
 
 

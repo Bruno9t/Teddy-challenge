@@ -11,7 +11,7 @@ import * as moment from 'moment';
 export class EmailComponentComponent implements OnInit {
   @Output() sendEmailsEvent = new EventEmitter();
 
-  endpoint = "https://dropmail.me/api/graphql/9sdf0nx96320n047"
+  endpoint = "https://dropmail.me/api/graphql/9sdf0nx96320n047ad323"
   proxyurl = "https://cors-anywhere.herokuapp.com/";
 
   sec: any = '0' + 0;
@@ -49,7 +49,7 @@ email = new FormControl(this.temporaryEmailData.introduceSession.addresses[0].ad
 
     const headers = {
       "content-type": "application/json",
-      "Authorization": "9sdf0nx96320n047"
+      "Authorization": "9sdf0nx96320n047ad323"
     }
 
     const graphqlQuery = {
@@ -64,6 +64,7 @@ email = new FormControl(this.temporaryEmailData.introduceSession.addresses[0].ad
     headers: headers,
     data: graphqlQuery
   });
+  
 
   this.start()
 
@@ -120,6 +121,7 @@ email = new FormControl(this.temporaryEmailData.introduceSession.addresses[0].ad
         }
 
         if(this.hr === '0'+ 0 && this.min === '0'+ 0 && this.sec === '0'+ 0){
+          this.running = false;
           this.stop()
           this.sendRequest()
         }
@@ -133,6 +135,6 @@ email = new FormControl(this.temporaryEmailData.introduceSession.addresses[0].ad
   }
 
   public searchForEmailsEvery(){
-    setInterval(()=> this.sendEmailsEvent.emit(this.temporaryEmailData),10000)
+    setInterval(()=> this.sendEmailsEvent.emit(this.temporaryEmailData),15000)
   }
 }
