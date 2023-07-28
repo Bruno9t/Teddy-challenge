@@ -60,7 +60,6 @@ export class AppComponent implements OnInit {
   }
 
   public async searchForEmails(event:any){
-    console.log(event)
     const headers = {
       "content-type": "application/json",
       "Authorization": "9sdf0nx96320n047ad323"
@@ -78,14 +77,12 @@ export class AppComponent implements OnInit {
     headers: headers,
     data: graphqlQuery
   });
-  console.log(response)
   this.emails = response.data.data.session.mails;
   return this.emails;
 
   }
 
   public selectedEmail(event: any,index: number){
-    console.log(index,this.emailSelectedIndex)
     if(this.emailSelectedIndex !== index && this.emailSelectedIndex !== null){
       this.lastSelected.className = this.lastSelected.className.split(' selected')[0]
     }
