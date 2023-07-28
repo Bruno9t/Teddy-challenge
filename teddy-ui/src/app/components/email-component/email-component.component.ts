@@ -57,10 +57,9 @@ email = new FormControl(this.temporaryEmailData.introduceSession.addresses[0].ad
     data: graphqlQuery
   });
 
+  
 
   this.setEmail(response)
-
-  console.log(response.data.data.introduceSession.addresses[0].address);
 
   }
 
