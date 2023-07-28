@@ -25,7 +25,7 @@
 
 <main>
   <section class="email-input">
-    <app-email-component></app-email-component>
+    <app-email-component (sendEmailsEvent)="searchForEmails($event)"></app-email-component>
   </section>
 
   <section class="email-section">
@@ -34,10 +34,12 @@
         Inbox
       </div>
       <div class="inbox-content">
-        <div style="display: flex; flex-direction: column;">
-          <h2>Hello</h2>
-          <h3>Welcome</h3>
-          <p>Your temp e-mail address is ready...</p>
+        <div *ngFor="let email of emailsTest; let i = index" 
+        (click)="selectedEmail(i)"
+        style="display: flex; flex-direction: column;">
+          <h2>{{email.headerSubject}}</h2>
+          <h3>{{email.headerSubject}}</h3>
+          <p>{{email.text.substring(1,50)}}...</p>
         </div>
       </div>
     </div>
@@ -46,7 +48,12 @@
 
       </div>
       <div class="email-content">
-        
+        <div class="email-content-title">
+          {{emailSelected.headerSubject}}
+        </div>
+        <div class="email-content-cont">
+          {{emailSelected.text}}
+        </div>
       </div>
     </div>
   </section>
