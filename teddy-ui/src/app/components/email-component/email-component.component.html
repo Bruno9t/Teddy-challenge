@@ -1,0 +1,17 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Your temporary email address</mat-label>
+      <input formControlName="email" matInput placeholder="" [value]="email.value" readonly="true" #userinput>
+    </mat-form-field>
+    <button mat-flat-button
+    type="button"
+    [cdkCopyToClipboard]="email.value??'default'"><mat-icon>content_copy</mat-icon> copy</button>
+  </form>
+  <div class="refresh">
+    <div>
+        Autorefresh in
+    </div>
+    <div>
+        <button mat-flat-button (click)="sendRequest()"><mat-icon>refresh</mat-icon>Refresh</button>
+    </div>
+  </div>

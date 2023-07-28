@@ -1,0 +1,27 @@
+form{
+    width: 500px;
+    display: flex;
+
+    mat-form-field{
+        width: 100%;
+    }
+
+    button{
+        color:rgb(101, 99, 99);
+        height: 56px;
+        width: 100px;
+        border: 1px solid gray;
+        border-radius: 0;
+        border-top-right-radius: 5px;
+    }
+}
+
+.refresh{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        color:rgb(101, 99, 99);
+    }
+}
